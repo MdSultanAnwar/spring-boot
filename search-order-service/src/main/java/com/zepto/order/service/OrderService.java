@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.zepto.order.entity.OrderEntity;
+import com.zepto.order.exception.OrderDoesNotExistsException;
 import com.zepto.order.repository.OrderRepository;
 import com.zepto.order.response.OrderResponse;
 
@@ -22,14 +23,22 @@ public class OrderService
 
 		// OrderEntity entity = orderRepository.findById(orderId).get();
 
-		OrderEntity entity = orderRepository.findOrdersByOrderId(orderId);
-
+		OrderEntity entity = null;
 		OrderResponse response = new OrderResponse();
-		response.setId(entity.getId());
-		response.setOrderId(entity.getOrderId());
-		response.setCustomerId(entity.getCustomerId());
-		response.setProductId(entity.getProductId());
-		response.setQuantity(entity.getQuantity());
+
+		try
+		{
+			entity = orderRepository.findOrdersByOrderId(orderId);
+			response.setId(entity.getId());
+			response.setOrderId(entity.getOrderId());
+			response.setCustomerId(entity.getCustomerId());
+			response.setProductId(entity.getProductId());
+			response.setQuantity(entity.getQuantity());
+
+		} catch (Exception e)
+		{
+			throw new OrderDoesNotExistsException("  Order id " + orderId + " does not exists");
+		}
 
 		System.out.println("OrderService.getOrderById()::::::::::::: END");
 
