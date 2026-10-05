@@ -92,7 +92,11 @@ public class OrderService
 		{
 			System.out.println("OrderService.acceptOrder()... order paid. sending  message to kafka");
 			String data = objToJson(orderResponse);
-			kafkaService.sendMessage("order-paid", data);
+			for (int i = 0; i < 1000; i++)
+			{
+
+				kafkaService.sendMessage("order-all-status", data + " message # "+ i);
+			}
 
 		}
 
