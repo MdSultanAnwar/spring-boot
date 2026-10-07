@@ -1,6 +1,12 @@
 package com.zepto.invoice.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.zepto.invoice.entity.InvoiceEntity;
@@ -35,6 +41,28 @@ public class InvoiceService
 
 		}
 		return invoiceResponse;
+	}
+
+	public List<InvoiceResponse> getInvoices(int page, int size)
+	{
+		Pageable pageable = PageRequest.of(page, size);
+		Page<InvoiceEntity> result = invoiceRepository.findAll(pageable);
+
+		List<InvoiceResponse> response = new ArrayList<InvoiceResponse>();
+
+		for (InvoiceEntity invoiceEntity : result)
+		{
+			InvoiceResponse invoiceResponse = new InvoiceResponse();
+
+			invoiceResponse.setId(invoiceEntity.getId());
+			invoiceResponse.setInvId(invoiceEntity.getInvId());
+			invoiceResponse.setCustomerName(invoiceEntity.getCustomerName());
+			invoiceResponse.setGst(invoiceEntity.getGst());
+			invoiceResponse.setStatus(invoiceEntity.getStatus());
+
+			response.add(invoiceResponse);
+		}
+		return response;
 	}
 
 }
