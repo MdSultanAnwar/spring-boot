@@ -6,6 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
+<<<<<<< HEAD
+=======
+import org.springframework.web.bind.annotation.GetMapping;
+>>>>>>> 98abf0bc1ab98b91b111a691f0ca526a6ffd2549
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +23,7 @@ import com.zepto.category.service.CategoryService;
 @RequestMapping("category")
 public class CategoryController
 {
+<<<<<<< HEAD
 	
 	@Autowired
 	CategoryService categoryService;
@@ -29,6 +34,25 @@ public class CategoryController
 		 CategoryResponse response = categoryService.createCategory(categoryRequest);
 		 return ResponseEntity.status(HttpStatus.OK).body(response);
 		
+=======
+
+	@Autowired
+	CategoryService categoryService;
+
+	@PostMapping("/create")
+	public ResponseEntity<CategoryResponse> createCategory(@RequestBody CategoryRequest categoryRequest)
+	{
+		CategoryResponse response = categoryService.createCategory(categoryRequest);
+		return ResponseEntity.status(HttpStatus.OK).body(response);
+
+	}
+
+	@GetMapping("showCategories")
+	public String listAllCategories()
+	{
+		categoryService.showAllCategories();
+		return "SUCCESS";
+>>>>>>> 98abf0bc1ab98b91b111a691f0ca526a6ffd2549
 	}
 
 }

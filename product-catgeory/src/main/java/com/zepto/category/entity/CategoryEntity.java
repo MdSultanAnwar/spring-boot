@@ -7,6 +7,10 @@ import com.zepto.product.entity.ProductEntity;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+<<<<<<< HEAD
+=======
+import jakarta.persistence.FetchType;
+>>>>>>> 98abf0bc1ab98b91b111a691f0ca526a6ffd2549
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -29,7 +33,11 @@ public class CategoryEntity
 
 	private LocalDateTime createdAt;
 
+<<<<<<< HEAD
 	@OneToMany(mappedBy = "category" , cascade = CascadeType.ALL)
+=======
+	@OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+>>>>>>> 98abf0bc1ab98b91b111a691f0ca526a6ffd2549
 	private List<ProductEntity> products;
 
 	public Long getId()
