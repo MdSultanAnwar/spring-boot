@@ -3,19 +3,18 @@ package com.zepto.invoice.request.response;
 public class InvoiceRequest
 {
 
-	String invId;
-	String customerName;
+	String cutomerName;
 	int gst;
 	String status;
 
-	public String getCustomerName()
+	public String getCutomerName()
 	{
-		return customerName;
+		return cutomerName;
 	}
 
-	public void setCustomerName(String customerName)
+	public void setCutomerName(String cutomerName)
 	{
-		this.customerName = customerName;
+		this.cutomerName = cutomerName;
 	}
 
 	public int getGst()

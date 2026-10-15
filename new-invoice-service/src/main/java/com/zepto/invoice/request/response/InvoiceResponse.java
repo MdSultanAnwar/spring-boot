@@ -1,16 +1,11 @@
 package com.zepto.invoice.request.response;
 
-import java.io.Serializable;
-
-public class InvoiceResponse implements Serializable
+public class InvoiceResponse
 {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+
 	int id;
 	String invId;
-	String customerName;
+	String cutomerName;
 	int gst;
 	String status;
 
@@ -34,14 +29,14 @@ public class InvoiceResponse implements Serializable
 		this.invId = invId;
 	}
 
-	public String getCustomerName()
+	public String getCutomerName()
 	{
-		return customerName;
+		return cutomerName;
 	}
 
-	public void setCustomerName(String customerName)
+	public void setCutomerName(String cutomerName)
 	{
-		this.customerName = customerName;
+		this.cutomerName = cutomerName;
 	}
 
 	public int getGst()

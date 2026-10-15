@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,6 +21,7 @@ import com.zepto.invoice.service.InvoiceService;
 
 @RestController
 @RequestMapping("invoice")
+@EnableFeignClients
 public class InvoiceController
 {
 
@@ -33,11 +34,11 @@ public class InvoiceController
 	public ResponseEntity<InvoiceResponse> createInvoice(@RequestBody InvoiceRequest invoiceRequest)
 	{
 
-		log.info("Received request to create invoice for customer: {}", invoiceRequest.getCustomerName());
+		log.info("Received request to create invoice for customer: {}", invoiceRequest.getCutomerName());
 
 		InvoiceResponse respnse = invoiceService.createInvoice(invoiceRequest);
 
-		log.info("Invoice creation request completed successfully for customer: {}", invoiceRequest.getCustomerName());
+		log.info("Invoice creation request completed successfully for customer: {}", invoiceRequest.getCutomerName());
 
 		return ResponseEntity.status(HttpStatus.ACCEPTED).body(respnse);
 	}
