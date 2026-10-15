@@ -1,6 +1,8 @@
 package com.zepto.order.controller;
 
+
 import java.util.List;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,10 +26,12 @@ public class OrderController
 		return orderService.getOrderById(id);
 	}
 
+
 	@GetMapping("findOrderByPayment")
 	public List<OrderResponse> findOrderByPayment(@RequestParam("paymentType") String paymentType)
 	{
 		return orderService.listOrdersByPayment(paymentType);
 	}
+
 
 }

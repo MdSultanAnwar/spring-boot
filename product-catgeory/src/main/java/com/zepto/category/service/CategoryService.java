@@ -1,7 +1,10 @@
 package com.zepto.category.service;
 
+<<<<<<< HEAD
+=======
 import java.util.List;
 
+>>>>>>> 98abf0bc1ab98b91b111a691f0ca526a6ffd2549
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +12,10 @@ import com.zepto.category.entity.CategoryEntity;
 import com.zepto.category.repository.CategoryRepository;
 import com.zepto.category.request.response.CategoryRequest;
 import com.zepto.category.request.response.CategoryResponse;
+<<<<<<< HEAD
+=======
 import com.zepto.product.entity.ProductEntity;
+>>>>>>> 98abf0bc1ab98b91b111a691f0ca526a6ffd2549
 
 @Service
 public class CategoryService
@@ -17,6 +23,8 @@ public class CategoryService
 	@Autowired
 	CategoryRepository categoryRepository;
 
+<<<<<<< HEAD
+=======
 	// total 6 queries --> N categories --> N+1
 	public void showAllCategories()
 	{
@@ -41,6 +49,7 @@ public class CategoryService
 
 	}
 
+>>>>>>> 98abf0bc1ab98b91b111a691f0ca526a6ffd2549
 	public CategoryResponse createCategory(CategoryRequest categoryRequest)
 	{
 		CategoryEntity categoryEntity = new CategoryEntity();
@@ -54,8 +63,22 @@ public class CategoryService
 		categoryResponse.setName(responseEntity.getName());
 		categoryResponse.setDescription(responseEntity.getDescription());
 		categoryResponse.setStatus(responseEntity.getStatus());
+<<<<<<< HEAD
+		
+		return categoryResponse;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+=======
 
 		return categoryResponse;
 	}
+>>>>>>> 98abf0bc1ab98b91b111a691f0ca526a6ffd2549
 
 }

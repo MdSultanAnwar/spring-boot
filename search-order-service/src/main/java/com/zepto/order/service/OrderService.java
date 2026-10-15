@@ -1,13 +1,19 @@
 package com.zepto.order.service;
 
+<<<<<<< HEAD
+=======
 import java.util.ArrayList;
 import java.util.List;
 
+>>>>>>> 98abf0bc1ab98b91b111a691f0ca526a6ffd2549
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.zepto.order.entity.OrderEntity;
+<<<<<<< HEAD
+=======
 import com.zepto.order.exception.OrderDoesNotExistsException;
+>>>>>>> 98abf0bc1ab98b91b111a691f0ca526a6ffd2549
 import com.zepto.order.repository.OrderRepository;
 import com.zepto.order.response.OrderResponse;
 
@@ -23,6 +29,16 @@ public class OrderService
 
 		// OrderEntity entity = orderRepository.findById(orderId).get();
 
+<<<<<<< HEAD
+		OrderEntity entity = orderRepository.findOrdersByOrderId(orderId);
+
+		OrderResponse response = new OrderResponse();
+		response.setId(entity.getId());
+		response.setOrderId(entity.getOrderId());
+		response.setCustomerId(entity.getCustomerId());
+		response.setProductId(entity.getProductId());
+		response.setQuantity(entity.getQuantity());
+=======
 		OrderEntity entity = null;
 		OrderResponse response = new OrderResponse();
 
@@ -39,11 +55,14 @@ public class OrderService
 		{
 			throw new OrderDoesNotExistsException("  Order id " + orderId + " does not exists");
 		}
+>>>>>>> 98abf0bc1ab98b91b111a691f0ca526a6ffd2549
 
 		System.out.println("OrderService.getOrderById()::::::::::::: END");
 
 		return response;
 	}
+<<<<<<< HEAD
+=======
 
 	public List<OrderResponse> listOrdersByPayment(String paymentType)
 	{
@@ -68,4 +87,5 @@ public class OrderService
 		return response;
 
 	}
+>>>>>>> 98abf0bc1ab98b91b111a691f0ca526a6ffd2549
 }

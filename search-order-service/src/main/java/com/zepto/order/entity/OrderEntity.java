@@ -17,6 +17,7 @@ public class OrderEntity
 	private int customerId;
 	private int productId;
 	private int quantity;
+
 	private String paymentMethod;
 	private String shippingAddress;
 
