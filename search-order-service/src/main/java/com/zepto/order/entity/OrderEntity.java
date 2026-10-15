@@ -17,11 +17,9 @@ public class OrderEntity
 	private int customerId;
 	private int productId;
 	private int quantity;
-<<<<<<< HEAD
-=======
+
 	private String paymentMethod;
 	private String shippingAddress;
->>>>>>> 98abf0bc1ab98b91b111a691f0ca526a6ffd2549
 
 	public int getId()
 	{
@@ -73,8 +71,6 @@ public class OrderEntity
 		this.quantity = quantity;
 	}
 
-<<<<<<< HEAD
-=======
 	public String getPaymentMethod()
 	{
 		return paymentMethod;
@@ -95,5 +91,4 @@ public class OrderEntity
 		this.shippingAddress = shippingAddress;
 	}
 
->>>>>>> 98abf0bc1ab98b91b111a691f0ca526a6ffd2549
 }
