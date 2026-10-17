@@ -3,158 +3,81 @@ package com.zepto.order.response;
 public class OrderResponse
 {
 
-	public class OrderResponse
+	private int id;
+	private int orderId;
+	private int customerId;
+	private int productId;
+	private int quantity;
+	private String paymentMethod;
+	private String shippingAddress;
+
+	public int getId()
 	{
+		return id;
+	}
 
-		private int id;
-		private int orderId;
-		private int customerId;
-		private int productId;
-		private int quantity;
+	public void setId(int id)
+	{
+		this.id = id;
+	}
 
-		public int getId()
-		{
-			return id;
-		}
+	public int getOrderId()
+	{
+		return orderId;
+	}
 
-		public void setId(int id)
-		{
-			this.id = id;
-		}
+	public void setOrderId(int orderId)
+	{
+		this.orderId = orderId;
+	}
 
-		public int getOrderId()
-		{
-			return orderId;
-		}
+	public int getCustomerId()
+	{
+		return customerId;
+	}
 
-		public void setOrderId(int orderId)
-		{
-			this.orderId = orderId;
-		}
+	public void setCustomerId(int customerId)
+	{
+		this.customerId = customerId;
+	}
 
-		private String paymentMethod;
-		private String shippingAddress;
+	public int getProductId()
+	{
+		return productId;
+	}
 
-		public int getCustomerId()
-		{
-			return customerId;
-		}
+	public void setProductId(int productId)
+	{
+		this.productId = productId;
+	}
 
-		public void setCustomerId(int customerId)
-		{
-			this.customerId = customerId;
-		}
+	public int getQuantity()
+	{
+		return quantity;
+	}
 
-		public int getProductId()
-		{
-			return productId;
-		}
+	public void setQuantity(int quantity)
+	{
+		this.quantity = quantity;
+	}
 
-		public void setProductId(int productId)
-		{
-			this.productId = productId;
-		}
+	public String getPaymentMethod()
+	{
+		return paymentMethod;
+	}
 
-		public int getQuantity()
-		{
-			return quantity;
-		}
+	public void setPaymentMethod(String paymentMethod)
+	{
+		this.paymentMethod = paymentMethod;
+	}
 
-		public void setQuantity(int quantity)
-		{
-			this.quantity = quantity;
-		}
+	public String getShippingAddress()
+	{
+		return shippingAddress;
+	}
 
-		public String getPaymentMethod()
-		{
-			return paymentMethod;
-		}
-
-		public void setPaymentMethod(String paymentMethod)
-		{
-			this.paymentMethod = paymentMethod;
-		}
-
-		public String getShippingAddress()
-		{
-			return shippingAddress;
-		}
-
-	public void setShippingAddress(String shippingAddress) {
-
-		private String paymentMethod;
-		private String shippingAddress;
-
-		public int getId()
-		{
-			return id;
-		}
-
-		public void setId(int id)
-		{
-			this.id = id;
-		}
-
-		public int getOrderId()
-		{
-			return orderId;
-		}
-
-		public void setOrderId(int orderId)
-		{
-			this.orderId = orderId;
-		}
-
-		public int getCustomerId()
-		{
-			return customerId;
-		}
-
-		public void setCustomerId(int customerId)
-		{
-			this.customerId = customerId;
-		}
-
-		public int getProductId()
-		{
-			return productId;
-		}
-
-		public void setProductId(int productId)
-		{
-			this.productId = productId;
-		}
-
-		public int getQuantity()
-		{
-			return quantity;
-		}
-
-		public void setQuantity(int quantity)
-		{
-			this.quantity = quantity;
-		}
-
-		public String getPaymentMethod()
-		{
-			return paymentMethod;
-		}
-
-		public void setPaymentMethod(String paymentMethod)
-		{
-			this.paymentMethod = paymentMethod;
-		}
-
-		public String getShippingAddress()
-		{
-			return shippingAddress;
-		}
-
-		public void setShippingAddress(String shippingAddress)
-		{
-
-			this.shippingAddress = shippingAddress;
-		}
-
+	public void setShippingAddress(String shippingAddress)
+	{
+		this.shippingAddress = shippingAddress;
+	}
 }
-	
